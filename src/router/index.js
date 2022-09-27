@@ -1,25 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ChocolateHome from '../views/ChocolateHome.vue'
 import IngredientsList from '../views/IngredientsList.vue'
-import ChocolateRecipe from '../components/ChocolateRecipe.vue'
+import RecipeDetails from '../views/RecipeDetails.vue'
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
             path: '/',
-            name: 'ChocolateHome',
+            name: 'Chocolate cake',
             component: ChocolateHome
         },
         {
             path: '/ingredients',
-            name: 'IngredientsList',
+            name: 'List of ingredients',
             component: IngredientsList
         },
         {
-            path: '/recipe',
-            name: 'ChocolateRecipe',
-            component: ChocolateRecipe
+            path: '/recipe/52776',
+            name: 'Recipe details',
+            component: RecipeDetails
         }
     ]
 })

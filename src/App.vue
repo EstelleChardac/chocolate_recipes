@@ -2,9 +2,9 @@
     <header>
         <div>
             <nav class="navbar">
-                <router-link to="/">Chocolate cake</router-link>
+                <router-link to="/">Welcome</router-link>
                 <router-link to="/ingredients">List of ingredients</router-link>
-                <router-link to="/recipe">Chocolate Cake Recipe</router-link>
+                <!-- <router-link to="/recipe">Chocolate Cake Recipe</router-link> -->
             </nav>
             <router-view />
         </div>

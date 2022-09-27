@@ -1,44 +1,45 @@
 <template>
-    <main>
-        <!-- <ChocolateRecipe
+    <h1 class="webtitle">Chocolate cakes for everyone!</h1>
+    <div>
+        <ChocolateRecipe
             v-for="meal in meals"
             :key="meal.idMeal"
             :meal="meal"
-        /> -->
-        <h1 v-for="meal in meals" :key="meal.idMeal">
-            {{ meal[0].strMeal }} {{ meal[0].strInstructions }}
-        </h1>
-    </main>
+        />
+    </div>
 </template>
 
 <script>
-// import ChocolateRecipe from '../components/ChocolateRecipe.vue'
-import axios from 'axios'
+// import axios from 'axios'
+import ChocolateRecipe from '../components/ChocolateRecipe.vue'
+import RecipeService from '../services/RecipeService.js'
 
 export default {
     name: 'ChocolateHome',
-    // components: {
-    //     ChocolateRecipe
-    // },
+    components: {
+        ChocolateRecipe
+    },
+
     data() {
         return {
-            meals: []
+            meals: null
         }
     },
     created() {
-        axios
-            .get(
-                'https://www.themealdb.com/api/json/v1/1/search.php?s=Chocolate'
-            )
+        RecipeService.getRecipes()
             .then((response) => {
-                this.meals = response.data
+                this.meals = response.data.meals
+                // console.log(response.data.meals)
             })
             .catch((error) => console.log(error))
     }
 }
 </script>
-<style scoped>
-main {
-    color: black;
+<style lang="scss" scoped>
+.webtitle {
+    &:hover {
+        color: rgb(77, 20, 20);
+        transform: translateY(30px) rotate(8deg) translateY(5px);
+    }
 }
 </style>
