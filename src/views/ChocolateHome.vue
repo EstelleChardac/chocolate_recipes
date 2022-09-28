@@ -10,7 +10,6 @@
 </template>
 
 <script>
-// import axios from 'axios'
 import ChocolateRecipe from '../components/ChocolateRecipe.vue'
 import RecipeService from '../services/RecipeService.js'
 
@@ -29,7 +28,7 @@ export default {
         RecipeService.getRecipes()
             .then((response) => {
                 this.meals = response.data.meals
-                // console.log(response.data.meals)
+                console.log(response.data.meals)
             })
             .catch((error) => console.log(error))
     }

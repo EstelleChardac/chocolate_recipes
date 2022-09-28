@@ -1,5 +1,5 @@
 <template>
-    <div class="chocontainer">
+    <div v-if="meal" class="chocontainer">
         <h2 class="choctitle">
             {{ meal.strMeal }}
         </h2>
@@ -15,19 +15,19 @@
 <script>
 import RecipeService from '../services/RecipeService.js'
 export default {
+    props: ['id'],
     data() {
         return {
-            meal: null,
-            idMeal: 52776
+            meal: null
         }
     },
     created() {
-        RecipeService.getRecipe(this.idMeal)
+        RecipeService.getRecipe(this.id)
             .then((response) => {
                 this.meal = response.data.meals[0]
-                // console.log(response.data)
+                // console.log(response.data.meals)
             })
-            .catch((error) => console.log(error))
+            .catch((error) => console.log(error), [])
     }
 }
 </script>

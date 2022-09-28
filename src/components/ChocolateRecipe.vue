@@ -1,5 +1,8 @@
 <template>
-    <router-link to="/recipe/52776" class="link">
+    <router-link
+        :to="{ name: 'RecipeDetails', params: { id: meal.idMeal } }"
+        class="link"
+    >
         <div class="chocontainer">
             <h2 class="choctitle">
                 {{ meal.strMeal }}
