@@ -34,14 +34,14 @@ h2 {
     color: inherit;
 }
 .chocontainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
     margin: 10px;
     border: solid black 3px;
     border-radius: 5px;
-    width: 25%;
+    width: 50%;
 
     .choctitle {
         // align-items: center;
